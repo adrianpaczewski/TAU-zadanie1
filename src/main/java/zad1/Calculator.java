@@ -1,8 +1,10 @@
 package zad1;
 
+import com.github.javafaker.Faker;
+
 public class Calculator {
 
-    long calculate(long a, long b, OperationType operationType) {
+    public long calculate(long a, long b, OperationType operationType) {
 
         return switch (operationType) {
 
@@ -21,4 +23,25 @@ public class Calculator {
         };
 
     }
+
+    public int factorial(int n) {
+        int iloczyn = 1;
+        for (int i=1; i<=n; i++) {
+            iloczyn *= i;
+        }
+        return iloczyn;
+    }
+
+    public double pow(double base, double exponent) {
+        return Math.pow(base, exponent);
+    }
+
+    public String generateFirstName() {
+        return new Faker().name().firstName();
+    }
+
+    public String generateLastName() {
+        return new Faker().name().lastName();
+    }
+
 }
